@@ -1,39 +1,113 @@
-# AI-Movie-Chatbot
-A voice-controlled chatbot that fetches movie details and posters using the OMDb API. Powered by Streamlit, SpeechRecognition, and Text-to-Speech (TTS) for an interactive movie search experience.
+# 🎬 AI-Movie-Chatbot
 
-🛠️ Technologies Used-
+## 📌 Project Description
 
-Python 🐍
+The **Movie Chatbot** is an AI-powered chatbot designed to assist users in finding movie recommendations, providing information about movies, and engaging in casual conversations about films. It leverages **Natural Language Processing (NLP)** and **speech recognition** to process user queries and respond intelligently.
 
-Streamlit 🎨 (for UI)
+## ✨ Features
 
-SpeechRecognition 🎤 (for voice input)
+- 🎤 **Voice Recognition**: Users can interact using voice commands.
+- 
+- 🤖 **Natural Language Processing**: Utilizes `spaCy` for text understanding.
+- 
+- 🎥 **Movie Information**: Provides details on movies, actors, and genres.
+- 
+- 🔄 **Conversational AI**: Engages in a human-like movie discussion.
+- 
+- 🌐 **Streamlit UI**: Interactive web-based chatbot interface.
+  
 
-pyttsx3 🔊 (for text-to-speech)
+---
 
-Requests 🌐 (for fetching movie data from OMDb API)
+## 🚀 Installation Guide
 
-OMDb API 🎥 (for movie details)
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/movie-chatbot.git
+cd movie-chatbot
+```
+
+### 2️⃣ Set Up a Virtual Environment
+
+```bash
+python -m venv venv
+source venv/bin/activate   # For macOS/Linux
+venv\Scripts\activate      # For Windows
+```
+
+### 3️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4️⃣ Download the Required NLP Model
+
+```bash
+python -m spacy download en_core_web_sm
+```
+
+### 5️⃣ Run the Chatbot
+
+```bash
+streamlit run app.py
+```
+
+---
+
+## 📚 Dependencies
+
+Make sure the following Python libraries are installed:
+
+```bash
+speechrecognition
+spacy
+streamlit
+numpy
+pandas
+```
+Install them using:
+
+```bash
+pip install speechrecognition spacy streamlit numpy pandas
+```
+
+---
 
 
-🤖 How It Works-
+## 📄 API & Model Documentation
 
-1️⃣ Click the "🎤 Tap to Speak" button.
+- **Speech Recognition**: Converts voice input to text using `speechrecognition`.
+- 
+- **NLP Processing**: `spaCy` processes and understands user queries.
+- 
+- **Streamlit UI**: Provides an interactive chatbot interface.
+- 
 
-2️⃣ Say the movie name out loud.
+---
 
-3️⃣ The bot fetches details like IMDb rating, director, genre, and plot.
+## 🎯 Future Improvements
 
-4️⃣ Movie Poster is displayed for a better experience.
+- Add chatbot memory to recall previous conversations.
+- 
+- Integrate movie database API (e.g., IMDb, TMDb).
+- 
+- Improve conversational AI with a transformer-based model.
+  
 
-5️⃣ TTS Engine Reads Out the movie details.
+---
+
+## 📌 Author
+
+👤 **Harshit Patel**  
 
 
-🎭 Example Query
+---
 
-🔹 You Say: "Tell me about Inception"
+## ⭐ Contribute & Support
+If you find this project useful, consider giving it a ⭐ on GitHub!
 
-🔹 Bot Replies:"Inception is a Sci-Fi thriller released in 2010, directed by Christopher Nolan. It stars Leonardo DiCaprio and has an IMDb rating of 8.8."
 
 
 <img width="1201" alt="Screenshot 2025-02-09 at 1 53 17 PM" src="https://github.com/user-attachments/assets/419f46ab-e687-4f92-9729-dc9a1c9597d6" />
