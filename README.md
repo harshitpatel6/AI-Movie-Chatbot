@@ -7,13 +7,13 @@ The **Movie Chatbot** is an AI-powered chatbot designed to assist users in findi
 ## ✨ Features
 
 - 🎤 **Voice Recognition**: Users can interact using voice commands.
-- 
+  
 - 🤖 **Natural Language Processing**: Utilizes `spaCy` for text understanding.
-- 
+  
 - 🎥 **Movie Information**: Provides details on movies, actors, and genres.
-- 
+  
 - 🔄 **Conversational AI**: Engages in a human-like movie discussion.
-- 
+  
 - 🌐 **Streamlit UI**: Interactive web-based chatbot interface.
   
 
@@ -79,20 +79,20 @@ pip install speechrecognition spacy streamlit numpy pandas
 ## 📄 API & Model Documentation
 
 - **Speech Recognition**: Converts voice input to text using `speechrecognition`.
-- 
+  
 - **NLP Processing**: `spaCy` processes and understands user queries.
-- 
+  
 - **Streamlit UI**: Provides an interactive chatbot interface.
-- 
+  
 
 ---
 
 ## 🎯 Future Improvements
 
 - Add chatbot memory to recall previous conversations.
-- 
+  
 - Integrate movie database API (e.g., IMDb, TMDb).
-- 
+  
 - Improve conversational AI with a transformer-based model.
   
 
