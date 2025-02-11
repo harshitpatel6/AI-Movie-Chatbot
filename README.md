@@ -109,9 +109,11 @@ pip install speechrecognition spacy streamlit numpy pandas
 If you find this project useful, consider giving it a ⭐ on GitHub!
 
 
+![image](https://github.com/user-attachments/assets/464f70e9-229a-4925-8475-84b0c3d0e39e)
 
-<img width="1201" alt="Screenshot 2025-02-09 at 1 53 17 PM" src="https://github.com/user-attachments/assets/419f46ab-e687-4f92-9729-dc9a1c9597d6" />
+
+![image](https://github.com/user-attachments/assets/52e293c1-6140-4783-9987-623a306453dd)
 
 
-<img width="1205" alt="Screenshot 2025-02-09 at 1 52 21 PM" src="https://github.com/user-attachments/assets/21b5f111-4b59-4033-a7de-91d9ea494edd" />
+![image](https://github.com/user-attachments/assets/3fc12b1d-bdde-4de9-a864-accac8dab855)
 
