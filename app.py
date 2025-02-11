@@ -7,58 +7,24 @@ from dotenv import load_dotenv
 
 # Load API Key
 load_dotenv()
-OMDB_API_KEY = os.getenv("OMDB_API_KEY")
-
-# Initialize TTS Engine
-tts_engine = pyttsx3.init()
+OMDB_API_KEY = os.getenv("OMDB_API_KEY", "write API key here")  # Defaulting to provided API key
 
 # Streamlit Page Config
 st.set_page_config(page_title="🎬 AI Movie Chatbot", page_icon="🎥", layout="centered")
-
-# Custom CSS for UI Styling
-st.markdown("""
-    <style>
-        .stApp {
-            background-color: #1e1e1e;
-            color: white;
-        }
-        .title {
-            font-size: 2.5em;
-            font-weight: bold;
-            text-align: center;
-            color: #f4c542;
-        }
-        .subtitle {
-            font-size: 1.2em;
-            text-align: center;
-            color: #d4d4d4;
-        }
-        .button-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .movie-container {
-            background-color: #333;
-            padding: 15px;
-            border-radius: 10px;
-        }
-        .movie-title {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #f4c542;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
-# Title
-st.markdown('<div class="title">🎬 AI Movie Chatbot</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">🎤 Speak a movie name and get instant details!</div>', unsafe_allow_html=True)
 
 # Function to get movie details from OMDb API
 def get_movie_info(movie_name):
     url = f"http://www.omdbapi.com/?t={movie_name}&apikey={OMDB_API_KEY}"
     response = requests.get(url).json()
     return response if response.get("Response") == "True" else None
+
+# Function to convert text to speech
+def text_to_speech(text):
+    """Fixes threading issues by initializing a new engine every time."""
+    tts_engine = pyttsx3.init()
+    tts_engine.say(text)
+    tts_engine.runAndWait()
+    tts_engine.stop()
 
 # Function to recognize speech
 def voice_input():
@@ -77,10 +43,9 @@ def voice_input():
             st.error("❌ Speech service unavailable.")
         return None
 
-# Function for Text-to-Speech
-def text_to_speech(text):
-    tts_engine.say(text)
-    tts_engine.runAndWait()
+# UI Components
+st.title("🎬 AI Movie Chatbot")
+st.write("🎤 Speak a movie name and get instant details!")
 
 # Voice Input Button
 if st.button("🎤 Tap to Speak", key="voice_button"):
@@ -96,17 +61,13 @@ if movie_name:
 
     if movie_info:
         # Display Movie Details
-        st.markdown(f"""
-            <div class="movie-container">
-                <div class="movie-title">{movie_info['Title']} ({movie_info['Year']})</div>
-                <p>🎭 **Genre:** {movie_info['Genre']}</p>
-                <p>🎬 **Director:** {movie_info['Director']}</p>
-                <p>⭐ **IMDB Rating:** {movie_info['imdbRating']}</p>
-                <p>📜 **Plot:** {movie_info['Plot']}</p>
-                <p>🎭 **Actors:** {movie_info['Actors']}</p>
-            </div>
-        """, unsafe_allow_html=True)
-
+        st.subheader(f"{movie_info['Title']} ({movie_info['Year']})")
+        st.write(f"🎭 **Genre:** {movie_info['Genre']}")
+        st.write(f"🎬 **Director:** {movie_info['Director']}")
+        st.write(f"⭐ **IMDB Rating:** {movie_info['imdbRating']}")
+        st.write(f"📜 **Plot:** {movie_info['Plot']}")
+        st.write(f"🎭 **Actors:** {movie_info['Actors']}")
+        
         # Show Movie Poster
         st.image(movie_info["Poster"], caption=movie_info["Title"], width=300)
 
